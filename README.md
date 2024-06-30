@@ -1,2 +1,2 @@
 # traceroute
-A traceroute procedure that affords the user to quit the process mid-effort.
+A traceroute procedure written in Python that affords the user to quit the process mid-effort.
