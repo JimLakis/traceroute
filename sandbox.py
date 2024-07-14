@@ -46,6 +46,7 @@ def perform_single_ttl_traceroute(ip_packet, tcp_packet, timeout: int = 5, *args
 
             if response is not None:
                 break
+        print(response)
         return response
 
 
@@ -56,7 +57,7 @@ def main():
     threads = []
 
     tcp_packet = make_tcp_packet()
-    for i in range(64):
+    for i in range(4):
         ip_packet = make_ip_packet(ttl=i)
         single_thread = Thread(target=perform_single_ttl_traceroute, args=(ip_packet, tcp_packet))
         threads.append(single_thread)
@@ -65,7 +66,8 @@ def main():
     for t in threads:
         t.join()
 
-    print(threads)
+    for i in threads:
+        print(i)
 
 if __name__ == "__main__":
     print(f"Starting traceroute... enter 'ctrl+c' to force quit\n")
