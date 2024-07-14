@@ -1,3 +1,5 @@
+## Author: Jim Lakis
+
 ## scapy==2.5.0
 from scapy.sendrecv import sr1
 from scapy.layers.inet import IP, TCP
